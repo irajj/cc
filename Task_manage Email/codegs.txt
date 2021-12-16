@@ -1,0 +1,26 @@
+function doGet() {
+  var tmp = HtmlService.createTemplateFromFile('index')
+  return tmp.evaluate()
+}
+
+// releted with index html file
+function userClicked(userTodo){
+  // stuff for spread sheets
+    var url = "https://docs.google.com/spreadsheets/d/1CqLNROaNIS6ab2VsUim1uaj3q6gAti9kytItQyvae5s/edit#gid=0";
+    var ss = SpreadsheetApp.openByUrl(url);
+    var ws = ss.getSheetByName("Data");
+ 
+    ws.appendRow([userTodo.email,userTodo.tlist,userTodo.ttime, new Date()]);
+
+    // once data was inserted successfully..i will send msg here
+    
+    var email = userTodo.email; 
+    var subject = "Thansk for your submission";
+    var body = "we'll get back shortly";
+    GmailApp.sendEmail(email,subject,body); 
+
+}
+
+function include(filename){
+    return HtmlService.createHtmlOutputFromFile(filename).getContent();
+}

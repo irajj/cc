@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <base target="_top">
+    <?!= include("index-css"); ?>
+  </head>
+  <body>
+    
+    <h1>Create your to do list </h1>
+
+    <label>Enter Your Email here : </label>
+    <input type="email" id="em">
+    <br />
+    <br />  
+    <!-- Field for time -->
+    <label> Select Todo Timing : </label>
+    <select name="todotime" id="todotime" required>
+      <option > --select-- </option>
+      <option > Morning </option>
+      <option> Afternoon </option>
+      <option> Evening </option>
+      <option> Night </option>
+    </select>
+    </br>
+    </br>
+    <!-- Field for todo -->
+    <label> Enter Todo Name : </label>
+    <input type="text" id="utodo" required/>
+
+    <!-- Btn -->
+    <button id="btn" >Save</button>
+
+    <!-- External Javascript --> 
+    <?!= include("index-js"); ?>
+  </body>
+</html>

@@ -1,0 +1,17 @@
+<script>
+  document.getElementById("btn").addEventListener("click",doStuff);
+
+  function doStuff(){
+    
+    var userTodo = {};
+
+    userTodo.tlist = document.getElementById("utodo").value;
+    userTodo.ttime = document.getElementById("todotime").value;
+    userTodo.email = document.getElementById("em").value;
+    google.script.run.userClicked(userTodo);
+
+    userTodo.tlist = document.getElementById("utodo").value = "";
+    userTodo.ttime = document.getElementById("todotime").value = "--select--";
+    userTodo.email = document.getElementById("em").value = "";
+  }
+</script>

@@ -1,0 +1,40 @@
+import java.io.Serializable;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="WEB_BOOKSTORE_BOOKS")
+
+public class Book implements Serializable {
+
+    private String bookId;
+    private String title;
+
+    public Book() { }
+
+    public Book(String bookId, String title, ...) {
+        this.bookId = bookId;
+        this.title = title;
+        ...
+    }
+
+    @Id
+    public String getBookId() {
+        return this.bookId;
+    }
+
+    public String getTitle() {
+        return this.title;
+    }
+    ...
+
+    public void setBookId(String id) {
+        this.bookId=id;
+    }
+
+    public void setTitle(String title) {
+        this.title=title;
+    }
+    ...
+}

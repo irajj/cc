@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <base target="_top">
+  </head>
+  <body>
+    <h1></h1>
+    <div>
+    <label>First name:</label><input type="text" id="fn"></input>
+    </div>
+    <div>
+    <label>Last name:</label><input type="text" id="ln"></input>
+    </div>
+    <div>
+    <label>Application:</label>
+      <select id="app">
+        <option>Google Sheets</option>
+        <option>Excel</option>
+        <option>Other</option>
+      </select>
+    </div>
+    <div>
+      <button id="btn">Run It</button>
+    </div>
+
+
+  <script>
+    document.getElementById("btn").addEventListener("click",dostuff);
+
+    function dostuff(){
+
+        var fname= document.getElementById("fn").value;
+        var lname = document.getElementById("ln").value;
+        var ap = document.getElementById("app").value;
+
+        google.script.run.userClicked(fname,lname,ap);
+
+        document.getElementById("fn").value = "";
+        document.getElementById("ln").value = "";
+        document.getElementById("app").value = "";
+    } 
+  </script>
+  </body>
+</html>
